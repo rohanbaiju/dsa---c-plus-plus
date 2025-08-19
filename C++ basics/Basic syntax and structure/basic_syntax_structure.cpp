@@ -1,5 +1,13 @@
 // Sum, Difference, Product, Quotient, Remainder...
 
+/*Basic I/O + Operators
+
+👉 Write a program to input two numbers and print:
+
+Sum, difference, product, quotient, remainder.
+
+Compare them using relational operators (==, >, <, >=, <=, !=).*/
+
 #include <stdio.h>   // HEADER FILES FIRST
 
 int main()   // FUNCTION DECLARATION
@@ -22,6 +30,16 @@ int main()   // FUNCTION DECLARATION
 
     int m = x % y;
     printf("Remainder is: %d\n", m);
+
+    if (x > y)
+    printf("%d is greater than %d\n", x, y);
+
+    if (x < y)
+    printf("%d is greater than %d\n", y, x);
+
+    if (x == y)
+    printf("%d is equal to %d\n", x, y);
+
 
     printf("STRUCTURE DONE\n");
 
