@@ -1,0 +1,296 @@
+✅ 60 Commonly Asked C++ Interview Questions with Answers
+Basics of C++
+
+What is the difference between C and C++?
+
+C is a procedural programming language, while C++ is both procedural and object-oriented. C++ supports classes, inheritance, polymorphism, and encapsulation, which C does not.
+
+What are the main features of C++?
+
+OOP concepts (Encapsulation, Inheritance, Polymorphism, Abstraction), Templates, Exception handling, Operator overloading, STL, Low-level memory manipulation.
+
+What is the difference between compiler and interpreter?
+
+Compiler translates the entire program into machine code before execution. Interpreter translates line by line. C++ uses a compiler.
+
+What is the difference between C++98, C++11, and modern C++ standards?
+
+C++11 introduced smart pointers, auto keyword, nullptr, lambda functions, range-based for loops, etc. C++17/20 improved templates, concurrency, and concepts.
+
+OOP Concepts
+
+What is Object-Oriented Programming (OOP)?
+
+Programming paradigm based on objects, which encapsulate data (attributes) and functions (methods).
+
+What are the four pillars of OOP?
+
+Encapsulation, Abstraction, Inheritance, Polymorphism.
+
+What is Encapsulation?
+
+Wrapping data and functions into a single unit (class). Example: private data members with public getters/setters.
+
+What is Abstraction?
+
+Hiding implementation details and showing only functionality. Achieved via abstract classes and interfaces.
+
+What is Inheritance in C++?
+
+Mechanism where one class (child) derives from another (parent). Supports code reuse.
+
+Types of Inheritance in C++?
+
+Single, Multiple, Multilevel, Hierarchical, Hybrid.
+
+What is Polymorphism in C++?
+
+Ability of a function/operator to behave differently based on context. Types:
+
+Compile-time (function/operator overloading)
+
+Runtime (virtual functions)
+
+What is a virtual function?
+
+Function declared in base class using virtual keyword, overridden in derived class. Enables runtime polymorphism.
+
+What is a pure virtual function?
+
+virtual void display() = 0;
+
+Makes a class abstract. Must be overridden in derived classes.
+
+Difference between abstract class and interface?
+
+C++ doesn’t have interfaces directly; abstract class with only pure virtual functions behaves like interface.
+
+What is multiple inheritance and what issues arise?
+
+Class inherits from more than one base class. Issue: Diamond Problem (resolved by virtual inheritance).
+
+Memory Management
+
+What is the difference between stack and heap memory?
+
+Stack: automatic memory, faster, limited size.
+
+Heap: dynamic memory (new/delete), manually managed, larger.
+
+What is a dangling pointer?
+
+Pointer that points to memory which has been freed.
+
+What is a memory leak?
+
+Allocated memory not freed, leading to wastage.
+
+Difference between malloc/free and new/delete?
+
+malloc/free (C) don’t call constructors/destructors.
+
+new/delete (C++) call constructors/destructors.
+
+What are smart pointers in C++?
+
+Smart pointers (unique_ptr, shared_ptr, weak_ptr) automatically manage memory and prevent leaks.
+
+Pointers and References
+
+What is the difference between pointer and reference?
+
+Pointer stores memory address, can be reassigned, can be nullptr.
+
+Reference is an alias, must be initialized, cannot be null.
+
+What is a void pointer?
+
+Generic pointer that can point to any type (void*). Needs casting before use.
+
+What is this pointer?
+
+Implicit pointer passed to non-static member functions that points to the current object.
+
+What is pointer to function?
+
+A pointer storing address of a function. Used for callbacks.
+
+Functions
+
+What is function overloading?
+
+Defining multiple functions with the same name but different parameters.
+
+What is operator overloading?
+
+Giving special meaning to operators for user-defined types. Example: operator+.
+
+What are inline functions?
+
+Functions expanded in place to reduce function call overhead. Declared with inline keyword.
+
+What is recursion?
+
+Function calling itself directly/indirectly.
+
+What is friend function?
+
+Non-member function that can access private members of a class.
+
+Difference between virtual and pure virtual function?
+
+Virtual: may be overridden. Pure virtual: must be overridden.
+
+Constructors & Destructors
+
+What are constructors?
+
+Special functions to initialize objects. Same name as class, no return type.
+
+Types of constructors in C++?
+
+Default, Parameterized, Copy constructor, Move constructor.
+
+What is a copy constructor?
+
+Initializes an object using another object of the same class.
+
+What is deep copy vs shallow copy?
+
+Shallow: copies pointer values only.
+
+Deep: copies actual memory content.
+
+What are destructors?
+
+Special function called when object goes out of scope to release resources. Declared as ~ClassName().
+
+What is constructor overloading?
+
+Multiple constructors in a class with different parameters.
+
+STL (Standard Template Library)
+
+What is STL in C++?
+
+Collection of template classes and functions like vectors, lists, sets, maps, algorithms.
+
+Difference between vector and array?
+
+Array: fixed size.
+
+Vector: dynamic size, resizable.
+
+Difference between set and multiset?
+
+Set: unique sorted elements.
+
+Multiset: allows duplicates.
+
+Difference between map and unordered_map?
+
+Map: ordered, implemented using Red-Black Tree.
+
+Unordered_map: unordered, implemented using hash table.
+
+Difference between stack and queue?
+
+Stack: LIFO.
+
+Queue: FIFO.
+
+What is priority_queue?
+
+STL container adapter that acts as a max-heap by default.
+
+Templates
+
+What are templates in C++?
+
+Allow writing generic code. Example: template <typename T>.
+
+Difference between function template and class template?
+
+Function template: generic function.
+
+Class template: generic class.
+
+What is template specialization?
+
+Custom implementation for specific data type in a template.
+
+Advanced Concepts
+
+What is the difference between compile-time and runtime polymorphism?
+
+Compile-time: function overloading, operator overloading.
+
+Runtime: virtual functions.
+
+What is const keyword used for?
+
+Makes variables immutable, methods non-modifiable, pointers fixed.
+
+What is mutable keyword in C++?
+
+Allows a class member to be modified even if the object is declared const.
+
+What is the difference between static and dynamic binding?
+
+Static: resolved at compile-time (normal functions).
+
+Dynamic: resolved at runtime (virtual functions).
+
+What is an exception in C++?
+
+Runtime error handling mechanism using try, catch, throw.
+
+What is RAII in C++?
+
+Resource Acquisition Is Initialization: bind resource lifecycle to object lifetime.
+
+What are namespaces in C++?
+
+Used to avoid name conflicts. Example: std::cout.
+
+What is the difference between struct and class in C++?
+
+Struct: default members public.
+
+Class: default members private.
+
+What is type casting in C++?
+
+Converting data types. Types: static_cast, dynamic_cast, const_cast, reinterpret_cast.
+
+What is volatile keyword?
+
+Tells compiler variable can be changed outside program (e.g., hardware). Prevents optimization.
+
+What is difference between ++i and i++?
+
+++i: pre-increment (faster).
+
+i++: post-increment (returns old value).
+
+What is the difference between struct in C and C++?
+
+C struct: only data members.
+
+C++ struct: can have methods, constructors, inheritance.
+
+Multithreading & Concurrency
+
+How is multithreading achieved in C++?
+
+Using <thread> library in C++11.
+
+What is a race condition?
+
+When multiple threads access shared resource simultaneously without synchronization.
+
+What are mutex and lock in C++?
+
+Mutex: mutual exclusion to prevent race condition.
+
+Lock: higher-level wrapper for managing mutexes safely.
