@@ -1,0 +1,111 @@
+What is Time Complexity and Why Bother?
+Imagine you have two different recipes for baking a cake. Both recipes result in a delicious cake, but one takes 30 minutes and the other takes 3 hours. Which one would you choose? Probably the faster one.
+
+In programming, Time Complexity is the "recipe time" for your code. It's a way to measure how much longer your code will take to run as you give it more and more data.
+
+We don't measure it in seconds or minutes, because that depends on the computer's speed. Instead, we measure it in the number of operations the computer has to perform. The key idea is to understand how the number of operations grows as the input size (n) grows.
+
+The Language: Big O Notation
+We use something called Big O Notation to talk about time complexity. It looks like O(n), O(n^2), etc.
+
+Think of Big O as a way to classify your code's performance into different categories. It always describes the worst-case scenario – the longest your code could possibly take for a given input size.
+
+Let's use a simple analogy: You need to find a specific student file in a messy pile of student files. Let n be the total number of files.
+
+The Most Common Time Complexities (From Best to Worst)
+Here are the main categories you'll encounter on NeetCode, explained with our student file analogy and simple code examples.
+
+1. O(1) — Constant Time 🚀
+This is the holy grail of efficiency. It means your code takes the same amount of time to run, no matter how big the input is.
+
+Analogy: The file you need is magically always on the top of the pile. It doesn't matter if there are 10 files (n=10) or 1 million files (n=1,000,000), it takes you just one step.
+
+Code Example: Accessing an element in an array at a specific index.
+
+Python
+
+def get_first_element(my_list):
+  return my_list[0] # This one operation takes the same time, regardless of the list's size
+
+2. O(log n) — Logarithmic Time 🌲
+This is incredibly fast and efficient. As your input size n doubles, the number of operations only increases by one. It's often found in algorithms that divide the problem in half with each step.
+
+Analogy: The files are sorted alphabetically. To find "Smith", you open the pile to the middle. If the name you see is "Miller", you know "Smith" is in the second half, so you discard the first half. You repeat this process, halving the search area each time.
+
+Code Example: Binary Search.
+
+Python
+
+# A simplified idea of binary search
+# In each step, we cut the search space in half
+
+
+3. O(n) — Linear Time 👍
+This is a very common and generally good complexity. The number of operations grows in a straight line with the input size. If you double the input, the work you do doubles.
+
+Analogy: The files are completely unsorted. In the worst case, you have to look through every single file one by one until you find the one you want.
+
+Code Example: A single for loop that iterates through all elements of a list.
+
+Python
+
+def find_value(my_list, value_to_find):
+  for item in my_list: # This loop runs 'n' times for a list of size 'n'
+    if item == value_to_find:
+      return True
+  return False
+
+4. O(n^2) — Quadratic Time 🐢
+This is where things start to get slow. For every item in your input, you do something with every other item. If you double the input size, the number of operations quadruples (2²=4).
+
+Analogy: You have to check for duplicate files. You pick up the first file and compare it to every other file. Then you pick up the second file and compare it to every other file. You continue this until you've compared every file with every other file.
+
+Code Example: A nested loop where both loops iterate over the same input.
+
+Python
+
+def find_duplicates(my_list):
+  for i in range(len(my_list)):      # This outer loop runs 'n' times
+    for j in range(len(my_list)):  # This inner loop runs 'n' times for EACH outer loop iteration
+      if i != j and my_list[i] == my_list[j]:
+        return True # Found a duplicate
+  return False
+# Total operations = n * n = n^2
+
+
+How to Figure Out the Time Complexity
+When you look at your code, follow these simple rules:
+
+Drop the Constants: We only care about the big picture. O(2n) is the same as O(n). An algorithm that goes through a list twice is still fundamentally linear. The growth shape is a straight line.
+
+Find the Dominant Term: If you have an algorithm that does a linear scan and then a quadratic scan, like O(n+n^2)
+, we only care about the slowest part. As n gets very large, the n^2
+  part becomes so massive that the n part is insignificant. So, we simplify O(n+n^2) to just O(n^2).
+
+
+
+Total Time Complexity Calculation
+To find the total complexity, we add up the complexities of each part and take the dominant term:
+
+Setup operations: O(1)
+
+First loop (reading input): O(n)
+
+Second (nested) loop section: O(n)
+
+Total Complexity = O(1)+O(n)+O(n) = O(2n+1)
+
+As we learned, in Big O notation, we drop the constants and non-dominant terms.
+
+Therefore, the final time complexity of your code is O(n).
+
+
+
+Summary Cheat Sheet
+Here's the order from fastest to slowest:
+
+O(1)-O(logn)-O(n)-O(n^2)
+
+Your goal in solving DSA problems is often to get from a slow (like O(n^2)) "brute-force" solution to a faster, more clever solution (like O(n) or O(logn)).
+
+Now, with this in mind, try to solve a problem like "Contains Duplicate" on NeetCode. Think about the "brute-force" way first (hint: it might be O(n^2)) and then think about how a data structure, like a hash map, could make it much faster!

@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/DSA---C-PLUS-PLUS/C++ basics/Basic syntax and structure",
-      "program": "d:/DSA---C-PLUS-PLUS/C++ basics/Basic syntax and structure/build/Debug/outDebug",
+      "cwd": "d:/DSA---C-PLUS-PLUS/C++ basics/NEETCODE/Arrays",
+      "program": "d:/DSA---C-PLUS-PLUS/C++ basics/NEETCODE/Arrays/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
